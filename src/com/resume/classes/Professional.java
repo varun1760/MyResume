@@ -65,4 +65,14 @@ public class Professional {
 	public void socialProfiles() {
 		System.out.println("LinkedIn: " + linkedin + "\nGithub: " + github);
 	}
+
+	@Override
+	public String toString() {
+		return "Professional [\nSummary: " + summary + ",\nAcademics:\nGraduation: " + graduation 
+				+ ",\nSeniorSecondary: " + seniorSecondary + ",\nHigherSecondary: " + higherSecondary 
+				+ ",\nSkills: " + Arrays.toString(skills) + ",\nApplications: " 
+				+ Arrays.toString(applications) + ",\nProjects:\n" + Arrays.toString(projects)
+				+ ",\nCertificates:\n" + Arrays.toString(certificates) + ",\nLinkedin: " + linkedin 
+				+ ",\nGithub=" + github + "\n]\n";
+	}
 }

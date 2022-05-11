@@ -2,7 +2,7 @@ package com.resume.classes;
 
 import java.util.Scanner;
 
-public class MenuOption extends MyData{
+public class MenuOption extends DataService{
 	Scanner scanner = new Scanner(System.in);
 
 	public void mainMenu() {
@@ -12,10 +12,11 @@ public class MenuOption extends MyData{
 			case 0: {
 				System.out.println();
 				System.out.println("Please Select and Type your options given below:");
-				System.out.println("***********************************");
+				System.out.println("************************************************");
 				System.out.println(" 1 : Professional Informations.");
 				System.out.println(" 2 : Personal Informations.");
-				System.out.println(" 3 : Exit The Application.");
+				System.out.println(" 3 : \"Resume\" in a Document.");
+				System.out.println(" 4 : Exit The Application.");
 
 				goThere = scanner.nextInt();
 				continue;
@@ -31,6 +32,11 @@ public class MenuOption extends MyData{
 				continue;
 			}
 			case 3: {
+				fileMenu();
+				goThere = 0;
+				continue;
+			}
+			case 4: {
 				System.out.println("Exiting the Application...");
 				System.exit(0);
 			}
@@ -51,7 +57,7 @@ public class MenuOption extends MyData{
 			case 0: {
 				System.out.println();
 				System.out.println("Please Select Information Options:");
-				System.out.println("***********************************");
+				System.out.println("**********************************");
 				System.out.println(" 1 : Profile Summary");
 				System.out.println(" 2 : Academics.");
 				System.out.println(" 3 : Skills.");
@@ -118,7 +124,7 @@ public class MenuOption extends MyData{
 			case 0: {
 				System.out.println();
 				System.out.println("Please Select Information Options:");
-				System.out.println("***********************************");
+				System.out.println("**********************************");
 				System.out.println(" 1 : Personal Details.");
 				System.out.println(" 2 : Contacts.");
 				System.out.println(" 3 : Languages.");
@@ -153,6 +159,54 @@ public class MenuOption extends MyData{
 				break;
 			}
 			case 6: {
+				System.out.println("Exiting the Application");
+				System.exit(0);
+			}
+			default: {
+				System.out.println("Please enter a valid option");
+				System.out.println("OR");
+				goHere = 0;
+				continue;
+			}
+			}
+		} while (true);
+	}
+	public void fileMenu() {
+		int goHere = 0;
+		do {			
+			switch (goHere) {
+			case 0:{
+				System.out.println();
+				System.out.println("Please Select File Menu:");
+				System.out.println("***********************************");
+				System.out.println(" 1 : Show Resume in \".docx\" File.");
+				System.out.println(" 2 : Delete Resume.");
+				System.out.println(" 3 : Search Resume.");
+				System.out.println(" 4 : Main Menu");
+				System.out.println(" 5 : Exit the Application");
+				goHere = scanner.nextInt();
+				continue;
+			}
+			case 1: {
+				createFile();
+				goHere = 0;
+				continue;
+			}
+			case 2: {
+				deleteFile();
+				goHere = 0;
+				continue;
+			}
+			case 3: {
+				searchFile();
+				goHere = 0;
+				continue;
+			}
+			case 4: {
+				mainMenu();
+				break;
+			}
+			case 5: {
 				System.out.println("Exiting the Application");
 				System.exit(0);
 			}
